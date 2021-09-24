@@ -1,0 +1,45 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="submit()" class="box">
+        <!-- first name -->
+        <h4>Full Name</h4>
+        
+        <mat-form-field appearance="outline" class="placewidth">
+            <mat-label>full name</mat-label>
+            <input matInput placeholder="" formControlName="name">
+            <mat-error *ngIf="form.controls.name.errors">Name is required !</mat-error>
+        </mat-form-field>
+      
+
+        <!-- email -->
+        <h4>Email Id</h4>
+        <mat-form-field appearance="outline" class="placewidth">
+            <mat-label>email-id</mat-label>
+            <input matInput placeholder="" formControlName="email">
+            <mat-error *ngIf="form.controls.email.errors">User Name is required !</mat-error>
+        </mat-form-field>
+
+        <!-- password -->
+        <h4>Password</h4>
+        <mat-form-field appearance="outline" class="placewidth">
+            <mat-label>password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="form.controls.password.errors">Password is required !</mat-error>
+        </mat-form-field>
+
+        <!-- phone number -->
+        <h4 class="textP">Mobile Number</h4>
+        <mat-form-field appearance="outline" class="placewidth">
+            <mat-label></mat-label>
+            <input matInput placeholder="" formControlName="number">
+            <mat-error *ngIf="form.controls.number.errors">Phone Number is required !</mat-error>
+        </mat-form-field>
+
+        <div class="button">
+            <button type="submit" class="button" mat-flat-button color="warn">Signup</button>
+        </div>
+    </form>
+</div>

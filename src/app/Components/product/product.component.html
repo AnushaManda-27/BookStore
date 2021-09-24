@@ -1,0 +1,35 @@
+<!-- <p>product works!</p> -->
+<div class="displayBox">
+    <ng-container *ngFor="let book of books | paginate:{itemsPerPage: 8, currentPage: p}">
+        <div class="productBody">
+            <div class="bookImg" routerLink="productpage">
+                <img (click)="toProductPage(book)" class="img" src="../../../assets/component.png">
+            </div>
+            <div class="block">
+                <h5 class="description">{{book.description}}</h5>
+                <h5 class="author">by {{book.author}}</h5>
+                <div class="quantityAndRate">
+                    <div class="rate">
+                        <p style="color: white; margin: 0;"> 4.5</p>
+                        <mat-icon class="star">grade</mat-icon>
+                    </div>
+                    <h5 style="color: #878787;">({{book.quantity}})</h5>
+                </div>
+                <h5 class="price"> Rs. {{book.price}}</h5>
+
+                <!-- <div class="alternateButton" *ngIf="!book.displaybag"> -->
+                    <!-- <button class="addCartButton" (click)="isAddedToCart(book)">ADD TO BAG</button> -->
+                    <!-- <button class="whishlist" (click)="whishlist(book)"> &#x2764; WISHLIST</button> -->
+                <!-- </div> -->
+                <div class="alternateButton" *ngIf="book.displaybag">
+                    <button class="addedCart">ADDED TO CART</button>
+                </div>
+
+                <div class="view">QUICK VIEW</div>
+            </div>
+        </div>
+    </ng-container>
+</div>
+<div id="pagination" style="display: flex; justify-content: center;">
+    <pagination-controls (pageChange)="p=($event)"></pagination-controls>
+</div>

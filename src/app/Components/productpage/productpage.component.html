@@ -1,0 +1,93 @@
+<!-- <p>productpage works!</p> -->
+<div class="container">
+    <!-- HEADER -->
+    <app-header></app-header>
+
+    <!-- Main Content -->
+    <div class="main">
+        <div style="background-color: #FFFFFF; height: 5%; padding-top: 14px">
+            Home/books
+        </div>
+
+        <div class="content">
+
+            <div class="row_1st">
+                <img src="../../../assets/Image1.png">
+                <img src="../../../assets/Image46.png">
+            </div>
+
+            <div class="row_2nd">
+                <div class="imgCell">
+                    <img class="imgMain" src="../../../assets/component.png">
+                </div>
+                <div class="alternateButton">
+                    <button style="width: 45%; background-color: #A03037;" mat-flat-button color="primary">ADD TO
+                        BAG</button>
+                    <button style="width: 45%; color:white; background-color: #333333;" mat-stroked-button> &#x2764;
+                        WISHLIST</button>
+                </div>
+            </div>
+
+            <div class="row_3rd">
+                <p class="description">{{data.description}}</p>
+                <p class="author">by {{data.author}}</p>
+                <div style="display: flex;">
+                    <div class="rate">
+                        <p style="color: white; margin: 0; width: 20px; height: 19px; text-align: left;
+                        font: normal normal bold 14px/19px Roboto;"> 4.5</p>
+                        <mat-icon class="star">grade</mat-icon>
+                    </div>
+                    <h5 class="quantity">({{data.quantity}})</h5>
+                </div>
+                <p class="price"> Rs. {{data.price}}</p>
+
+                <mat-divider></mat-divider>
+
+                <div class="details">
+                    <h4 class="heading">&#x25CF; Book Details</h4>
+                    <div class="bookContent">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                        sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                        justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+                        ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
+                        et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                        est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                        takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                        sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+                        erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                        kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                        amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                        dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                        rebum. Stet clita kasd gubergren, no sea takimata sanctus estundefined
+                    </div>
+                </div>
+
+                <mat-divider></mat-divider>
+
+                <div style="margin-top: 10px;">
+                    <h3>Coustomer Feedback</h3>
+                    <div class="review">
+                        <h5 class="text">overall rating</h5>
+                        <div>
+                            star Rating
+                        </div>
+                        <input class="searchInput" type="text" placeholder="write a review">
+                        <div>
+                            <button type="submit" class="button" mat-flat-button color="warn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
