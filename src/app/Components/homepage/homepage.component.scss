@@ -1,17 +1,11 @@
 .container{
-    width: 883px;
+    width: 100%;
     height: 100%;
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
     // justify-content: space-between;
 }
-
-.header{
-    position: fixed;
-    width: 100%;
-}
-
 
 
 // .container{
@@ -23,22 +17,22 @@
 //     // justify-content: space-between;
 // }
 
-// .header{
-//     position: fixed;
-//     width: 100%;
-// }
+.header{
+    position: fixed;
+    width: 100%;
+}
 
-// .main{
-//     background-color: #FFFFFF;
-//     margin: 0px 240px 0px 228px;
-// }
+.main{
+    background-color: #FFFFFF;
+    // margin: 0px 240px 0px 228px;
+}
 
-// .footer {
-//     position: fixed;
-//     left: 0;
-//     bottom: 0;
-//     width: 100%;
-//     flex-shrink: 0;
-//     flex-grow: 0;
-//     padding: 0;
-// }
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    padding: 0;
+}

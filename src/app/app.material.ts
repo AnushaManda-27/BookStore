@@ -16,7 +16,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatPaginatorModule} from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import {MatRadioModule} from '@angular/material/radio'
 
 
 
@@ -38,6 +38,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
         MatCardModule,
         BrowserAnimationsModule,
         HttpClientModule,
+        
     ],
     exports:[
         MatInputModule,
@@ -57,7 +58,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
         BrowserAnimationsModule,
         HttpClientModule,
         MatPaginatorModule,
-        NgxPaginationModule
+        NgxPaginationModule,
+        MatRadioModule
+        
     ]
     
 })

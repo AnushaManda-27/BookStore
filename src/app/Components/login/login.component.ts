@@ -29,9 +29,9 @@ export class LoginComponent implements OnInit {
       }
 
       this.userservice.login(dataLogin).subscribe((dataLogin: any) => {
-        console.log(dataLogin)
+        console.log(dataLogin.result)
         localStorage.setItem("email", dataLogin["email"]);
-        localStorage.setItem("token", dataLogin.result.accesToken);
+        localStorage.setItem("token", dataLogin.result.accessToken);
         this.router.navigate(['/home']);
       },
       (error)=>{

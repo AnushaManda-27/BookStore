@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpserviceService {
-  token : any;
+  // token : any;
   constructor(private httpClient: HttpClient) { }
 
 post(url: string, data: any, isHeaderRequired: any = false, token: any = null) {

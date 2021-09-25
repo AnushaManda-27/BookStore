@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import {MatIconModule} from '@angular/material/icon'
+import {BookserviceService} from 'src/app/services/bookservice.service';
+import {SiblingserviceService} from 'src/app/services/siblingservice.service';
 
 @Component({
   selector: 'app-productpage',
@@ -10,17 +11,47 @@ import {MatIconModule} from '@angular/material/icon'
 export class ProductpageComponent implements OnInit {
 
   data: any
+  @Input() books: any;
+  
+  id: any
+  cartBooks: Array<any> = [];
+  cart1: any
+  cart: any
+  token: any
+  bookId: any
+  homeBook: any
+  cartBook: any
 
-  constructor(private router: Router) {
+
+  constructor(private router: Router, private service: BookserviceService,  private sibService: SiblingserviceService) {
     this.data = this.router.getCurrentNavigation()?.extras.state;
     console.log(this.data)
   }
 
   ngOnInit(): void {
+    this.token = localStorage.getItem('token')
+    console.log(this.token)
     this.getData()
+    
   }
 
   getData = () => {
     this.data = this.data['value']
+  }
+  isAddedToCart(cart: any) {
+
+    cart.displaybag = false;
+
+    console.log("cart in home ", this.cartBooks)
+
+    let reqData = {
+      "id": cart._id,
+      "token": this.token
+    }
+    this.service.addCart(reqData, this.token).subscribe((response) => {
+      console.log(response)
+    }, error => {
+      console.log(error);
+    });
   }
 }

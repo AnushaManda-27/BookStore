@@ -29,19 +29,14 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.token = localStorage.getItem('token')
+  
+    
     // console.log(this.token);
     this.getCount()
 
     for (this.homeBook of this.books) {
       console.log("homeId", this.homeBook)
 
-      // for(this.cartBook of this.cartBooks){
-      //   let cartId = console.log("cartId ", this.cartBook._id)
-
-      //   if(cartId==homeId){
-      //     this.cart.displaybag = true;
-      //   }
-      // }
 
     }
   }
@@ -57,6 +52,7 @@ export class ProductComponent implements OnInit {
       console.log("homeId ", this.homeBook._id)
     }
   }
+
 
   toProductPage(id: any) {
     this.id = id
