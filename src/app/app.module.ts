@@ -16,6 +16,12 @@ import { BookComponent } from './Components/book/book.component';
 import { ProductComponent } from './Components/product/product.component';
 import { ProductpageComponent } from './Components/productpage/productpage.component';
 import { CartComponent } from './Components/cart/cart.component';
+import { OrderplacedComponent } from './Components/orderplaced/orderplaced.component';
+import { MyordersComponent } from './Components/myorders/myorders.component';
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
+import { StarratingComponent } from './Components/starrating/starrating.component';
+import { BookcountComponent } from './Components/bookcount/bookcount.component';
+import { SearchbarPipe } from './Components/searchbar.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +35,13 @@ import { CartComponent } from './Components/cart/cart.component';
     BookComponent,
     ProductComponent,
     ProductpageComponent,
-    CartComponent
+    CartComponent,
+    OrderplacedComponent,
+    MyordersComponent,
+    WishlistComponent,
+    StarratingComponent,
+    BookcountComponent,
+    SearchbarPipe
   ],
   imports: [
     BrowserModule,

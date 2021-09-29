@@ -21,11 +21,20 @@ export class ProductpageComponent implements OnInit {
   bookId: any
   homeBook: any
   cartBook: any
-
+  title = 'My Angular Project!';
+  todaydate: any;
+  componentproperty: any;
+  comment: any;
+  formdata: any;
+  currentVal: any;
 
   constructor(private router: Router, private service: BookserviceService,  private sibService: SiblingserviceService) {
     this.data = this.router.getCurrentNavigation()?.extras.state;
     console.log(this.data)
+  }
+  getVal(val:any) {
+    console.warn(val);
+    this.currentVal=val
   }
 
   ngOnInit(): void {
@@ -53,5 +62,20 @@ export class ProductpageComponent implements OnInit {
     }, error => {
       console.log(error);
     });
+  }
+  wishlist(cart: any) {
+    let wishlistData = {
+      "id": cart._id,
+      "token": this.token
+    }
+    this.service.addwishlist(wishlistData, this.token).subscribe((response) => {
+      console.log(response)
+    },
+      error => {
+        console.log(error);
+      });
+  }
+  homepage() {
+    this.router.navigate(['home']);
   }
 }

@@ -25,15 +25,16 @@ export class CartComponent implements OnInit {
   removeById: any
   token: any
   length: any
+  quantity: number = 1;
+  
 
   public contactForm!: FormGroup;
 
   constructor(private bookService: BookserviceService, private sibService: SiblingserviceService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.token = localStorage.getItem('token');
+    this.token = localStorage.getItem('token')
     this.getItems();
-  
 
     this.contactForm = this.formBuilder.group({
       fullName: new FormControl(),
@@ -48,6 +49,21 @@ export class CartComponent implements OnInit {
   addressToggles() {
     this.displayAddress = false
     this.displayButton = false
+  }
+  i = 1
+  increment(data: { product_id: { quantity: any; }; }) {
+    if (this.i != data.product_id.quantity) {
+      this.i++;
+      this.quantity = this.i;
+      console.log(data.product_id.quantity);
+    }
+  }
+  decrement() {
+    if (this.i != 1) {
+      this.i--;
+      this.quantity = this.i;
+      console.log(this.quantity);
+    }
   }
 
   continue() {
@@ -97,50 +113,59 @@ export class CartComponent implements OnInit {
 
   }
 
-
-
-  // submit() {
-  //   console.log(this.contactForm.value);
-  //   let result = {
-  //     "addressType": this.contactForm.value.addressType,
-  //     "fullAddress": this.contactForm.value.fullAddress,
-  //     "city": this.contactForm.value.city,
-  //     "state": this.contactForm.value.state,
-  //   }
-  //   console.log(result);
-  //   this.bookService.putAddress(result, this.token).subscribe((data: any) => {
-  //     console.log(data)
-  //   },(error) => {
-  //       console.log(error);
-  //     }
-  //   );
-  //   this.displayCart = false
-  //   this.displayContinueButton = false
-  // }
-
-  // checkout() {
-  //   this.cartBook = this.cartBook;
-  //   let orders: Array<any> = []
-  //   for (this.cartBook of this.cartBooks) {
-  //     // console.log("checkout  "+ this.cartBook.product_id.author)
-  //     let order = {
-  //       "product_id": this.cartBook.product_id._id,
-  //       "product_name": this.cartBook.product_id.bookName,
-  //       "product_quantity": this.cartBook.product_id.quantity,
-  //       "product_price": this.cartBook.product_id.price,
-  //     }
-  //     orders.push(order)
-  //   }
-    // let OD = {
-    //   orders: orders
-    // }
-    // console.log(OD)
-    // this.bookService.order(OD, this.token).subscribe((response: any) => {
-    //   console.log(response)
-    //   this.router.navigate(['/orderplaced']);
-    // },
-    //   error => {
-    //     console.log(error);
-    //   });
+  removeItem = (data: any) => {
+    // console.log(data._id)
+    this.bookService.deleteItem(data._id, this.token).subscribe((data: any) => {
+      this.getItems()
+    },
+      error => {
+        console.log(error);
+      });
   }
-// }
+
+  submit() {
+    console.log(this.contactForm.value);
+    let result = {
+      "addressType": this.contactForm.value.addressType,
+      "fullAddress": this.contactForm.value.fullAddress,
+      "city": this.contactForm.value.city,
+      "state": this.contactForm.value.state,
+    }
+    console.log(result);
+    this.bookService.putAddress(result, this.token).subscribe((data: any) => {
+      console.log(data)
+    },(error) => {
+        console.log(error);
+      }
+    );
+    this.displayCart = false
+    this.displayContinueButton = false
+  }
+
+  checkout() {
+    this.cartBook = this.cartBook;
+    let orders: Array<any> = []
+    for (this.cartBook of this.cartBooks) {
+      // console.log("checkout  "+ this.cartBook.product_id.author)
+      let order = {
+        "product_id": this.cartBook.product_id._id,
+        "product_name": this.cartBook.product_id.bookName,
+        "product_quantity": this.cartBook.product_id.quantity,
+        "product_price": this.cartBook.product_id.price,
+      }
+      orders.push(order)
+    }
+    let OD = {
+      orders: orders
+    }
+    console.log(OD)
+    this.bookService.order(OD, this.token).subscribe((response: any) => {
+      console.log(response)
+      this.router.navigate(['/orderplaced']);
+    
+      });
+  }
+  homepage() {
+    this.router.navigate(['home']);
+  }
+}

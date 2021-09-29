@@ -1,6 +1,6 @@
 <!-- <p>product works!</p> -->
 <div class="displayBox">
-    <ng-container *ngFor="let book of books | paginate:{itemsPerPage: 8, currentPage: p}">
+    <ng-container *ngFor="let book of books | paginate:{itemsPerPage: 8, currentPage: p} | searchbar: searchWord">
         <div class="productBody">
             <div class="bookImg" routerLink="productpage">
                 <img (click)="toProductPage(book)" class="img" src="../../../assets/component.png">

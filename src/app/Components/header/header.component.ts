@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {SiblingserviceService} from 'src/app/services/siblingservice.service'
-
+import {BookserviceService} from 'src/app/services/bookservice.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,8 +10,9 @@ import {SiblingserviceService} from 'src/app/services/siblingservice.service'
 export class HeaderComponent implements OnInit {
   countItem: any;
   badgeContent: any;
+  isSearch = false;
 
-  constructor(private router: Router, private sibService: SiblingserviceService) { }
+  constructor(private router: Router, private sibService: SiblingserviceService, private bookService: BookserviceService) { }
 
   ngOnInit(): void {
     this.sibService.sendMessage.subscribe((message: any) => {
@@ -31,6 +32,10 @@ export class HeaderComponent implements OnInit {
 
   getwishlist() {
     this.router.navigate(['/wishlist'])
+  }
+
+  shareSearchWord(search: any) {
+    this.bookService.sendSearch(search);
   }
 
 }

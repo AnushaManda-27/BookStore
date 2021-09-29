@@ -4,7 +4,7 @@
 
     <div class="main">
         <div style="background-color: #FFFFFF; height: 5%; padding-top: 14px">
-            Home/My cart
+            <a (click)="homepage()">Home</a>/My cart
         </div>
         <!-- Books details -->
 
@@ -21,7 +21,16 @@
                             letter-spacing: 0px;
                             color: #0A0102;
                             opacity: 1;">Rs. {{cartBook.product_id.price}}</span>
-                            <h5 style="cursor: pointer;">Remove</h5>
+                            <div style="display: flex;flex-wrap: nowrap;flex-flow: row;"><span class="material-icons" (click)="decrement()"
+                                    style="color: rgb(202, 201, 201);">
+                                    remove_circle
+                                </span>
+                                <input style="width: 10px;height: 15px;" [value]="quantity">
+                                <span class="material-icons" (click)="increment(cartBook)" style="color: rgb(202, 201, 201);">
+                                    add_circle
+                                </span>
+                                <h5 style="cursor: pointer;" (click)="removeItem(cartBook)">Remove</h5>
+                            </div>
                         </div>
                     </div>
                     <mat-divider></mat-divider>
@@ -50,7 +59,7 @@
             <span>Address Details</span>
         </div>
 
-        <form class="custermerAddress" *ngIf="!displayAddress" [formGroup]="contactForm">
+        <form class="custermerAddress" *ngIf="!displayAddress" (ngSubmit)="submit()" [formGroup]="contactForm">
             <div style=" width: 75%;">
                 <h2 class="details">Customer Details</h2>
                 <div style="display: flex; justify-content: space-between;">
@@ -101,7 +110,7 @@
                     <span style="color: #A03037; padding: 20px 0px 20px 19px;">Add New Address</span>
                 </div>
                 <div>
-                    <div class="continue"  *ngIf="displayContinueButton">
+                    <div class="continue" (click) = "submit()"  *ngIf="displayContinueButton">
                         Continue
                     </div>
                 </div>
@@ -119,7 +128,7 @@
             <div>
                 <ng-container *ngFor="let cartBook of cartBooks">
                     <div class="book" style=" flex-direction: row;">
-                        <img src="../../../assets/books/Image 11.png">
+                        <img src="../../../assets/Image1.png">
                         <div style="margin-left: 20px;">
                             <h4 style="width: 300px; margin-bottom: 0;">{{cartBook.product_id.description}}</h4>
                             <h5 style="margin-bottom: 5px; color: #9D9D9D;">by {{cartBook.product_id.author}}</h5>
@@ -134,7 +143,7 @@
             </div>
 
             <div class="checkoutOrder">
-                <div class="order">
+                <div (click) = "checkout()" class="order">
                     CHECKOUT
                 </div>
             </div>

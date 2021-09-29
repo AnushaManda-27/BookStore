@@ -5,7 +5,7 @@
         <h2 class="bookText">BOOKSTORE</h2>
         <div class="search">
             <mat-icon mat-button>search</mat-icon>
-            <input class="searchInput" type="text" placeholder="Search">
+            <input class="searchInput" type="text" placeholder="Search" #search (keyup)="shareSearchWord(search.value)">
         </div>
         <div class="rightSection">
             <mat-icon [matMenuTriggerFor]="menu" class="headerButton">person</mat-icon>
@@ -14,7 +14,7 @@
                 <div class="profileMenu">
                     <h5>Profile</h5>
                     <h5>My Orders</h5>
-                    <h5 style="cursor: pointer">My Wishlist</h5>
+                    <h5 (click)="getwishlist()" style="cursor: pointer">My Wishlist</h5>
                 </div>
                 <button class="button" mat-stroked-button>
                     Log Out
@@ -23,7 +23,7 @@
             <h5 style="margin: 0; color:#FCFCFC;">Profile</h5>
         </div>
         <div class="rightSection2">
-            <mat-icon matBadgeSize="small" class="headerButton" (click)="getCart()">local_grocery_store</mat-icon>
+            <mat-icon [matBadge]="badgeContent" matBadgeSize="small" class="headerButton" (click)="getCart()">local_grocery_store</mat-icon>
             <h5 style="margin: 0; color:#FCFCFC;">Cart</h5>
         </div>
     </div>

@@ -1,12 +1,12 @@
 <!-- <p>productpage works!</p> -->
 <div class="container">
     <!-- HEADER -->
-    <app-header></app-header>
+    <app-header class="header"></app-header>
 
     <!-- Main Content -->
     <div class="main">
         <div style="background-color: #FFFFFF; height: 5%; padding-top: 14px">
-            Home/books
+            <a (click)="homepage()">Home</a>/books
         </div>
 
         <div class="content">
@@ -23,7 +23,7 @@
                 <div class="alternateButton">
                     <button style="width: 45%; background-color: #A03037;" mat-flat-button color="primary" (click)="isAddedToCart(data)">ADD TO
                         BAG</button>
-                    <button style="width: 45%; color:white; background-color: #333333;" mat-stroked-button> &#x2764;
+                    <button style="width: 45%; color:white; background-color: #333333;" mat-stroked-button (click)="wishlist(data)"> &#x2764;
                         WISHLIST</button>
                 </div>
             </div>
@@ -78,14 +78,16 @@
                     <div class="review">
                         <h5 class="text">overall rating</h5>
                         <div>
-                            star Rating
+                            <app-starrating class= "rating"></app-starrating>
                         </div>
-                        <input class="searchInput" type="text" placeholder="write a review">
+                        <textarea matInput class="searchInput" type="text" placeholder="write a review" style="width: 570px;height: 70px;"
+                            name="comment" #box></textarea>
                         <div>
-                            <button type="submit" class="button" mat-flat-button color="warn">Submit</button>
+                            <button type="submit" class="button" mat-flat-button color="warn"(click)="getVal(box.value)">Submit</button>
                         </div>
                     </div>
                 </div>
+                <h2>{{currentVal}}</h2>
             </div>
         </div>
     </div>

@@ -6,7 +6,9 @@ import { RegistrationComponent } from './Components/registration/registration.co
 import { HomepageComponent } from './Components/homepage/homepage.component';
 import { ProductpageComponent} from 'src/app/Components/productpage/productpage.component';
 import { CartComponent } from './Components/cart/cart.component';
-
+import { OrderplacedComponent } from './Components/orderplaced/orderplaced.component';
+import { MyordersComponent } from './Components/myorders/myorders.component';
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
 const routes: Routes = [
   {
     path: '', component: RegistrationComponent, children: [
@@ -16,7 +18,11 @@ const routes: Routes = [
  
   
   { path: 'productpage', component: ProductpageComponent},
-  { path: 'cart', component: CartComponent}
+  { path: 'cart', component: CartComponent},
+  { path: 'orderplaced', component: OrderplacedComponent},
+  {path : 'myorders', component: MyordersComponent},
+  {path: 'wishlist', component: WishlistComponent}
+
  
 ];
 

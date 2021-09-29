@@ -166,6 +166,11 @@ img{
     flex-grow: 0;
     padding: 0;
 }
+.bookcount{
+    display: inline;
+    position: relative;
+    float:right;
+}
 
 @media (max-width: 1010px){
     .main{

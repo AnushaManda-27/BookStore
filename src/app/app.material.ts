@@ -16,7 +16,8 @@ import { HttpClientModule} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatPaginatorModule} from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
-import {MatRadioModule} from '@angular/material/radio'
+import {MatRadioModule} from '@angular/material/radio';
+import { MatBadgeModule } from '@angular/material/badge';
 
 
 
@@ -38,6 +39,7 @@ import {MatRadioModule} from '@angular/material/radio'
         MatCardModule,
         BrowserAnimationsModule,
         HttpClientModule,
+        MatBadgeModule
         
     ],
     exports:[
@@ -59,7 +61,8 @@ import {MatRadioModule} from '@angular/material/radio'
         HttpClientModule,
         MatPaginatorModule,
         NgxPaginationModule,
-        MatRadioModule
+        MatRadioModule,
+        MatBadgeModule
         
     ]
     

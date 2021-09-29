@@ -14,6 +14,7 @@ export class ProductComponent implements OnInit {
 
   p: number = 1;
   @Input() books: any;
+  @Input() searchText: any;
 
   id: any
   cartBooks: Array<any> = [];
@@ -23,12 +24,18 @@ export class ProductComponent implements OnInit {
   bookId: any
   homeBook: any
   cartBook: any
+  searchWord: any;
 
   constructor(private router: Router, private service: BookserviceService, private route: ActivatedRoute, private sibService: SiblingserviceService) {
   }
 
   ngOnInit(): void {
+    this.service.rcvSearch.subscribe((response: any)=>
+    {
+      this.searchWord = response;
+    })
     this.token = localStorage.getItem('token')
+    console.log(this.searchText);
   
     
     // console.log(this.token);
