@@ -18,6 +18,7 @@ import { MatPaginatorModule} from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {MatRadioModule} from '@angular/material/radio';
 import { MatBadgeModule } from '@angular/material/badge';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -39,7 +40,8 @@ import { MatBadgeModule } from '@angular/material/badge';
         MatCardModule,
         BrowserAnimationsModule,
         HttpClientModule,
-        MatBadgeModule
+        MatBadgeModule,
+        MatSnackBarModule
         
     ],
     exports:[

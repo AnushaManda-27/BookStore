@@ -37,5 +37,14 @@ export class HeaderComponent implements OnInit {
   shareSearchWord(search: any) {
     this.bookService.sendSearch(search);
   }
+  myprofile() {
+    this.router.navigate(['/myprofile'])
+  }
+  logout() {
+    sessionStorage.clear();
+    localStorage.clear();
+
+    this.router.navigateByUrl('login')
+  }
 
 }

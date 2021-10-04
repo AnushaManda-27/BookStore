@@ -37,12 +37,12 @@ export class CartComponent implements OnInit {
     this.getItems();
 
     this.contactForm = this.formBuilder.group({
-      fullName: new FormControl(),
-      phone: new FormControl(),
-      fullAddress: new FormControl(),
-      city: new FormControl(),
-      state: new FormControl(),
-      addressType: new FormControl(),
+      fullName: new FormControl('', [Validators.required, Validators.min(3)]),
+      phone: new FormControl('', [Validators.required, Validators.min(9)]),
+      fullAddress: new FormControl('', [Validators.required, Validators.min(3)]),
+      city: new FormControl('', [Validators.required, Validators.min(3)]),
+      state: new FormControl('', [Validators.required, Validators.min(3)]),
+      addressType: new FormControl('', [Validators.required, Validators.min(3)]),
     })
   }
 

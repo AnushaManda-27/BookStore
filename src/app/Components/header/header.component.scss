@@ -1,105 +1,35 @@
-// .header{
-//     width: 100%;
-//     background-color: #A03037;
-//     height: 60px;
-// }
-
-// .headerContent{
-//     height: 60px;
-//     display: flex;
-//     align-items: center;
-// }
-// .bookImg{
-//     height: 20px;
-//     margin-left: 1%;
-//     cursor: pointer;
-//     width:20px;
-// }
-// .bookText{
-//     margin: 0;
-//     color: #FFFFFF;
-//     padding: 0px 45px 0px 9px;
-//     font-size: small;
-// }
-// .search {
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//     padding: 0px 0px 0px 10px;
-//     background: #FCFCFC 0% 0% no-repeat padding-box;
-//     border-radius: 3px;
-//     transform: translate(-40px,0);
-// }
-
-// .searchInput {
-//     width: 109px;
-//     height: 20px;
-//     background: #FCFCFC 0% 0% no-repeat padding-box;
-//     border-radius: 3px;
-//     opacity: 1;
-//     outline: none;
-//     border: transparent;
-// }
-
-// .rightSection{
-//     display: flex;
-//     flex-direction: column;
-//     margin-left: -3%;
-//     // align-items:left;
-//     // margin-left: 14%;
-// }
-// .rightSection2{
-//     display: flex;
-//     flex-direction: column;
-//     // align-items: center;
-//     margin-left: 3%;
-//     margin-right: -5%;
-// }
-// .headerButton {
-//     color:#FCFCFC;
-//     cursor: pointer;
-//     background : #A03037
-    
-// }
-
-
-@media only screen and (min-width: 1200px){
 .header{
     background-color: #A03037;
     height: 60px;
-    // margin-left: 30px;
+    width:100%;
+    
 }
-
 .headerContent{
     height: 60px;
     display: flex;
     align-items: center;
-    margin-left: 11%;
+    // margin-left: 11%;
 }
-
 .bookImg{
-    height: 24px;
-    margin-left: 6%;
+    width: 25px;
+    margin-left: 2%;
     cursor: pointer;
 }
-
 .bookText{
-    margin: 0;
+    font-size: 15px;
     color: #FFFFFF;
-    padding: 0px 45px 0px 9px;
+    padding: 20px 10px 0px 9px;
 }
-
 .search {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0px 0px 0px 10px;
+    padding: 0px 0px 0px 5px;
     background: #FCFCFC 0% 0% no-repeat padding-box;
     border-radius: 3px;
 }
-
 .searchInput {
-    width: 490px;
+    width: 100px;
     height: 33px;
     background: #FCFCFC 0% 0% no-repeat padding-box;
     border-radius: 3px;
@@ -107,22 +37,18 @@
     outline: none;
     border: transparent;
 }
-
 .rightSection{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 14%;
+    margin-left: 5%;
 }
-
 .rightSection2{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: 5%;
 }
-
-
 .headerButton {
     color:#FCFCFC;
     cursor: pointer;
@@ -157,11 +83,87 @@
     border-radius: 2px;
 }
 
-@media (max-width: 1010px){
-    .headerContent{
-        width: 430px;
-    }
+@media only screen and (min-width: 768px){
+    .bookImg{
+    width: 30px;
+    margin-left: 5%;
+}
+.bookText{
+    font-size: 20px;
+    margin-right: 20px;
+  
+}
+
+.searchInput {
+    width: 300px;
+   
+}
+}
+
+@media only screen and (min-width: 1200px){
+
+
+.headerContent{
+
+    margin-left: 11%;
+}
+
+.bookImg{
+    height: 24px;
+    margin-left: 6%;
+    cursor: pointer;
+}
+
+.bookText{
+    margin: 0;
+    color: #FFFFFF;
+    padding: 0px 45px 0px 9px;
+}
+
+
+
+.searchInput {
+    width: 490px;
+  
+}
+
+.rightSection{
+    margin-left: 14%;
+}
+
+
+
+::ng-deep.mat-badge-content{
+    background : #FFFFFF;
+    color: #A03037;
+}
+
+::ng-deep.mat-menu-content:not(:empty){
+    width:150px !important;
+    padding: 15px 20px 15px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.host ::ng-deep.mat-menu-panel {
+    max-width:fit-content !important;
+}
+
+.profileMenu{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+::ng-deep.mat-stroked-button{
+    border: 1px solid #A03037;
+    border-radius: 2px;
+}
+}
+
+@media (max-width: 1024px){
+
 
 }
 
-}

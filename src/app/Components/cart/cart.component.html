@@ -1,6 +1,7 @@
 <!-- <p>cart works!</p> -->
+<app-header class="header"></app-header>
 <div class="container">
-    <app-header class="header"></app-header>
+    <!-- <app-header class="header"></app-header> -->
 
     <div class="main">
         <div style="background-color: #FFFFFF; height: 5%; padding-top: 14px">
@@ -15,12 +16,12 @@
                     <div class="book" style=" flex-direction: row;">
                         <img src="../../../assets/Image1.png">
                         <div style="margin-left: 20px;">
-                            <h4 style="width: 300px; margin-bottom: 0;">{{cartBook.product_id.description}}</h4>
+                            <h4 style="width: 30px; margin-bottom: 0;">{{cartBook.product_id.description}}</h4>
                             <h5 style="margin-bottom: 5px; color: #9D9D9D;">by {{cartBook.product_id.author}}</h5>
                             <span style="font: normal normal bold 15px/18px Lato;
                             letter-spacing: 0px;
                             color: #0A0102;
-                            opacity: 1;">Rs. {{cartBook.product_id.price}}</span>
+                            opacity: 1;">Rs. {{cartBook.product_id.price*quantity}}</span>
                             <div style="display: flex;flex-wrap: nowrap;flex-flow: row;"><span class="material-icons" (click)="decrement()"
                                     style="color: rgb(202, 201, 201);">
                                     remove_circle
@@ -62,15 +63,15 @@
         <form class="custermerAddress" *ngIf="!displayAddress" (ngSubmit)="submit()" [formGroup]="contactForm">
             <div style=" width: 75%;">
                 <h2 class="details">Customer Details</h2>
-                <div style="display: flex; justify-content: space-between;">
+                <div class= "fields">
                     <div>
-                        <h4 style="margin: 0px;" class="textName">Full Name</h4>
+                        <h4 style="margin: 0px;" class="textName">FullName</h4>
                         <mat-form-field appearance="outline" class="placewidth">
                             <input matInput placeholder="" formControlName="fullName">
                         </mat-form-field>
                     </div>
                     <div>
-                        <h4 style="margin: 0px;" class="textName">Mobile Number</h4>
+                        <h4 style="margin: 0px;" class="textName">MobileNumber</h4>
                         <mat-form-field appearance="outline" class="placewidth">
                             <input matInput placeholder="" formControlName="phone">
                         </mat-form-field>
@@ -82,7 +83,7 @@
                         <input matInput placeholder="" formControlName="fullAddress">
                     </mat-form-field>
                 </div>
-                <div style="display: flex; justify-content: space-between; margin-top: 35px;">
+                <div class="city">
                     <div>
                         <h4 style="margin: 0px;" class="textName">City/town</h4>
                         <mat-form-field appearance="outline" class="placewidth">
@@ -97,7 +98,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 style="margin-top: 10px;" class="textName">Type</h4>
+                    <h4 style="margin-top: 10px;" class="textName">Type:</h4>
                     <mat-radio-group formControlName="addressType">
                         <mat-radio-button class="example-margin" value="Home">Home</mat-radio-button>
                         <mat-radio-button class="example-margin" value="Office">Office</mat-radio-button>
@@ -107,7 +108,7 @@
             </div>
             <div style="display: flex; flex-direction: column; justify-content: space-between;">
                 <div class="newAddress" *ngIf="displayContinueButton">
-                    <span style="color: #A03037; padding: 20px 0px 20px 19px;">Add New Address</span>
+                    <span class="addnew">Add New Address</span>
                 </div>
                 <div>
                     <div class="continue" (click) = "submit()"  *ngIf="displayContinueButton">
@@ -130,7 +131,7 @@
                     <div class="book" style=" flex-direction: row;">
                         <img src="../../../assets/Image1.png">
                         <div style="margin-left: 20px;">
-                            <h4 style="width: 300px; margin-bottom: 0;">{{cartBook.product_id.description}}</h4>
+                            <h4 style="width: 150px; margin-bottom: 0;">{{cartBook.product_id.description}}</h4>
                             <h5 style="margin-bottom: 5px; color: #9D9D9D;">by {{cartBook.product_id.author}}</h5>
                             <span style="font: normal normal bold 15px/18px Lato;
                             letter-spacing: 0px;
@@ -143,7 +144,7 @@
             </div>
 
             <div class="checkoutOrder">
-                <div (click) = "checkout()" class="order">
+                <div (click) = "checkout()" class="checkorder">
                     CHECKOUT
                 </div>
             </div>

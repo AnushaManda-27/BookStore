@@ -1,24 +1,21 @@
+
 .main{
     height: 100%;
-    width: 80%;
+    width: 94%;
+    // background-color: violet;
     margin-top: 5%;
-    margin-left: 13%;
-    overflow:hidden;
-    
-
+    margin-left: 3%;
+    overflow: hidden;
 }
-
 .middleHead{
     display: flex;
     flex-direction: row;
     
 }
-
 .bookTxt{
     display: flex;
-    
     align-items: baseline;
-    margin: 20px 20px 20px 20px;
+    margin: 10px 0px 20px 0px;
     font-size: 22px;
     padding-left: 17px;
     color: #0A0102;
@@ -26,6 +23,51 @@
 }
 .sort{
     display: flex;
+    margin-left:25%;
+}
+.filter{
+    height: 30px;
+    // transform: translate(0,5px);
+    padding: 0px 5px 0 5px  ;
+    margin-top: 5px;
+    // background-color: yellow;
+
+}
+.items{
+    width: 62px;
+    height: 16px;
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1
+}
+
+@media only screen and (min-width: 768px){
+    .main{
+        height: 128%;
+    }
+    
+    .sort{
+    margin-left:63%;
+}
+
+}
+@media only screen and (min-width: 1200px){
+.main{
+    height: 100%;
+    width: 80%;
+    margin-left: 13%;
+}
+
+
+
+.bookTxt{
+    margin: 20px 20px 20px 20px;
+    
+    
+}
+.sort{
     margin-left:63%;
 }
 .filter{
@@ -35,13 +77,4 @@
 
 }
 
-
-.items{
-    width: 62px;
-    height: 16px;
-    text-align: left;
-    font: normal normal normal 12px/16px Roboto;
-    letter-spacing: 0px;
-    color: #9D9D9D;
-    opacity: 1
 }

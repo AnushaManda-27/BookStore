@@ -22,6 +22,7 @@ import { WishlistComponent } from './Components/wishlist/wishlist.component';
 import { StarratingComponent } from './Components/starrating/starrating.component';
 import { BookcountComponent } from './Components/bookcount/bookcount.component';
 import { SearchbarPipe } from './Components/searchbar.pipe';
+import { MyprofileComponent } from './Components/myprofile/myprofile.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SearchbarPipe } from './Components/searchbar.pipe';
     WishlistComponent,
     StarratingComponent,
     BookcountComponent,
-    SearchbarPipe
+    SearchbarPipe,
+    MyprofileComponent
   ],
   imports: [
     BrowserModule,

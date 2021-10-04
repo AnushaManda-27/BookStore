@@ -12,11 +12,11 @@
             <mat-menu class="profile" #menu="matMenu" xPosition="before">
                 <span> Hello Anusha</span>
                 <div class="profileMenu">
-                    <h5>Profile</h5>
+                    <h5 style="cursor: pointer" (click)="myprofile()">Profile</h5>
                     <h5>My Orders</h5>
                     <h5 (click)="getwishlist()" style="cursor: pointer">My Wishlist</h5>
                 </div>
-                <button class="button" mat-stroked-button>
+                <button class="button" mat-stroked-button (click)= logout()>
                     Log Out
                 </button>
             </mat-menu>

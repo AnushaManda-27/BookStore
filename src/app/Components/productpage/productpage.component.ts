@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import {BookserviceService} from 'src/app/services/bookservice.service';
 import {SiblingserviceService} from 'src/app/services/siblingservice.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-productpage',
@@ -28,7 +29,7 @@ export class ProductpageComponent implements OnInit {
   formdata: any;
   currentVal: any;
 
-  constructor(private router: Router, private service: BookserviceService,  private sibService: SiblingserviceService) {
+  constructor(private router: Router, private service: BookserviceService, public snackBar:MatSnackBar , private sibService: SiblingserviceService) {
     this.data = this.router.getCurrentNavigation()?.extras.state;
     console.log(this.data)
   }
@@ -58,7 +59,9 @@ export class ProductpageComponent implements OnInit {
       "token": this.token
     }
     this.service.addCart(reqData, this.token).subscribe((response) => {
-      console.log(response)
+      console.log(response);
+      this.snackBar.open('Book Added To Cart', 'close')._dismissAfter(2000);
+      
     }, error => {
       console.log(error);
     });
