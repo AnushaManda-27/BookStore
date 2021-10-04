@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("token", dataLogin.result.accessToken);
         this.router.navigate(['/home']);
       },
-      (error)=>{
+      error=>{
         console.log(error);
       });
 
